@@ -23,7 +23,6 @@ class TitleHead extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        // Spacer(flex: 1),
         Padding(padding: EdgeInsets.only(bottom: 10)),
         Text(
           text,
@@ -36,9 +35,8 @@ class TitleHead extends StatelessWidget {
         Spacer(flex: 2),
         Image.asset(
           image,
-          // height: (260),
-          // width: (265),
-          scale: 1.9,
+          height: (265),
+          width: (235),
         ),
       ],
     );

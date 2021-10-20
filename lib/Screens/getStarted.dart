@@ -24,9 +24,9 @@ class _getStartedState extends State<getStarted> {
           preferredSize: Size.fromHeight(70),
           child: Container(
             child: Column(
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+                  padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
                   child: Text(
                     "Choose an Option",
                     style: TextStyle(
@@ -61,6 +61,10 @@ class _getStartedState extends State<getStarted> {
                   elevation: 3,
                   height: 195,
                   boxFit: BoxFit.cover,
+                  //titlePosition: GFPosition.start,
+                  //showOverlayImage: true,
+                  //imageOverlay: AssetImage('assets/Chat1.png'),
+
                   title: GFListTile(
                     title: Center(
                       child: Text(
@@ -93,6 +97,10 @@ class _getStartedState extends State<getStarted> {
                   elevation: 3,
                   height: 195,
                   boxFit: BoxFit.cover,
+                  //titlePosition: GFPosition.start,
+                  //showOverlayImage: true,
+                  //imageOverlay: AssetImage('assets/img1.png'),
+
                   title: GFListTile(
                     title: Center(
                       child: Text(
@@ -125,6 +133,9 @@ class _getStartedState extends State<getStarted> {
                   elevation: 3,
                   height: 195,
                   boxFit: BoxFit.cover,
+                  //showOverlayImage: true,
+                  //imageOverlay: AssetImage('assets/img.jpg'),
+
                   title: GFListTile(
                     title: Center(
                       child: Text(

@@ -37,8 +37,8 @@ class CardsModel extends StatelessWidget {
             decoration: BoxDecoration(
                 color: Color.fromRGBO(113, 48, 148, 1),
                 borderRadius: BorderRadius.only(
-                    bottomLeft: const Radius.circular(50.0),
-                    bottomRight: const Radius.circular(50.0))),
+                    bottomLeft: const Radius.circular(40.0),
+                    bottomRight: const Radius.circular(40.0))),
           ),
         ),
         backgroundColor: const Color.fromRGBO(36, 36, 62, 1),
@@ -67,10 +67,9 @@ class CardsModel extends StatelessWidget {
                             },
                             child: Text(
                               data.cardsname[index],
-                              textAlign: TextAlign.center,
                               style: TextStyle(
-                                  fontSize: 35,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 40,
+                                  // fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             )),
                       ),

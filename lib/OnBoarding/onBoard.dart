@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:adaptive_speech/OnBoarding/components/body.dart';
+import 'package:flutter_onboarding_screen/OnbordingData.dart';
+import 'package:flutter_onboarding_screen/flutteronboardingscreens.dart';
 
 class OnBoardScreen extends StatelessWidget {
   static String routeName = "/OnBoarding";
@@ -11,7 +13,8 @@ class OnBoardScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(36, 36, 62, 1),
-      body: Body(),
+      body: Body(
+      ),
     );
   }
 }

@@ -4,18 +4,32 @@ import 'package:flutter_tts/flutter_tts.dart';
 
 class MessageStyle extends StatelessWidget {
   final FlutterTts tts = FlutterTts();
-  final _text;
-  final int s;
+  dynamic _text;
+  int s;
+  String qm;
+  // ScrollController controller = ScrollController();
 
-  MessageStyle(this._text, this.s);
+  MessageStyle(this._text, this.s) {}
+  MessageStyle.a1(this.qm) {
+    speak1(am: qm);
+  }
+  // scroll() {
+  //   controller.jumpTo(controller.position.maxScrollExtent);
+  // }
+  Future speak1({String am}) async {
+    await tts.speak(am);
+  }
+
+  Future speak({String am}) async {
+    await tts.speak(_text);
+  }
 
   @override
   Widget build(BuildContext context) {
-    Future _speak() async {
-      await tts.speak(_text);
-    }
-
+    // scroll();
     return SingleChildScrollView(
+      // controller: controller,
+
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -23,15 +37,14 @@ class MessageStyle extends StatelessWidget {
           Flexible(
               child: (s == 0)
                   ? Padding(
-                      padding: EdgeInsets.only(right: 70),
+                      padding: const EdgeInsets.only(right: 90),
                       child: Container(
                         // margin: const EdgeInsets.symmetric(vertical: 6),
                         margin:
                             const EdgeInsets.only(top: 6, left: 10, right: 15),
                         padding: const EdgeInsets.symmetric(
                             vertical: 8, horizontal: 8),
-                        decoration: BoxDecoration(
-                          // color: Color.fromRGBO(190, 177, 199, 4),
+                        decoration: const BoxDecoration(
                           color: Color.fromRGBO(140, 140, 153, 4),
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(16),
@@ -40,33 +53,30 @@ class MessageStyle extends StatelessWidget {
                             bottomRight: Radius.circular(16),
                           ),
                         ),
+
                         child: ListTile(
                           title: Text(
                             _text,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
                               fontWeight: FontWeight.w600,
                             ),
                             textWidthBasis: TextWidthBasis.longestLine,
-                            maxLines: 5,
+                            maxLines: 15,
                           ),
                         ),
                       ),
                     )
                   : Padding(
-                      padding: EdgeInsets.only(left: 150),
+                      padding: const EdgeInsets.only(left: 90),
                       child: Container(
                         margin:
                             const EdgeInsets.only(top: 6, left: 10, right: 15),
                         padding: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 22),
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(190, 177, 199, 4),
-                          //color: Color.fromRGBO(140, 140, 153, 4),
-                          // Theme
-                          //     .of(context)
-                          //     .splashColor,
+                            vertical: 8, horizontal: 8),
+                        decoration: const BoxDecoration(
+                          color: Color.fromRGBO(185, 177, 199, 1),
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(16),
                             topRight: Radius.circular(16),
@@ -77,14 +87,15 @@ class MessageStyle extends StatelessWidget {
                         child: ListTile(
                           title: Text(
                             _text,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
                               fontWeight: FontWeight.w600,
                             ),
-                            maxLines: 6,
+                            textWidthBasis: TextWidthBasis.longestLine,
+                            maxLines: 15,
                           ),
-                          onTap: () => _speak(),
+                          onTap: () => speak(),
                         ),
                       ),
                     )),

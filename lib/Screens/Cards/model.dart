@@ -5,5 +5,6 @@ class model {
   List<IconData> cardsicon = [];
   List<dynamic> src = [];
 
+  
   model(this.cardsname, this.src);
 }

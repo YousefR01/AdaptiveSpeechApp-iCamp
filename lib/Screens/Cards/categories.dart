@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:adaptive_speech/Screens/Cards/cardsmodeldeaf.dart';
 import 'package:adaptive_speech/Screens/Cards/cardsmodelnormal.dart';
-
 import 'package:adaptive_speech/Screens/Cards/mydata.dart';
 
 class categoriesState extends StatelessWidget {
@@ -33,6 +32,18 @@ class categoriesState extends StatelessWidget {
     Icons.checkroom_outlined,
     Icons.color_lens_outlined,
     Icons.format_list_numbered_rtl_rounded,
+  ];
+  List imagesData = [
+    'assets/family.png',
+    'assets/expre.jpg',
+    'assets/places.png',
+    'assets/time.jpg',
+    'assets/request.png',
+    'assets/food.png',
+    'assets/feeling.jpg',
+    'assets/clothes.png',
+    'assets/colors.jpg',
+    'assets/numbers.png',
   ];
 
   @override
@@ -212,7 +223,7 @@ class categoriesState extends StatelessWidget {
                             Icon(
                               catIcon[index],
                               size: 52,
-                              color: Colors.white70,
+                              color: Colors.white,
                             ),
                             Text(
                               categList[index],
