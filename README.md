@@ -57,13 +57,16 @@ Here are the **three options** that you can Choose the one you want to use.
 </p>
 
 ## Voice Chat
-**The first option:** deaf can understand what others are saying through converting speech to text message, and also can reply with text message.
+**The first option:** deaf can understand what others are saying through converting speech to text message, and also can reply with text message. Also deaf can use the available shortcuts.
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/61423797/136614721-42d89404-69aa-46db-8c6c-f45a082e02cc.png" width="400"/>
-  <img src="https://user-images.githubusercontent.com/61423797/136614733-1b663bab-45d5-488b-8710-a6a34b43ba56.png" width="400"/>
+  <img src="https://user-images.githubusercontent.com/61423797/138010544-495c3b58-8eb0-40f6-92f3-9bbce16d866a.png" width="400"/>
+  <img src="https://user-images.githubusercontent.com/61423797/138010605-457866bb-8b5e-44b8-8f10-81729e1508fb.png" width="400"/>
+  <img src="https://user-images.githubusercontent.com/61423797/138010621-c3d3decf-430a-48fa-a357-3d9339939311.png" width="400"/>
+  <img src="https://user-images.githubusercontent.com/61423797/138010653-03d158be-bf5c-4b67-9686-4832f5834e36.png" width="400"/>
 </p>
+
 
 ## Categories
 The second and the third options show to you the list of the most important signs.
