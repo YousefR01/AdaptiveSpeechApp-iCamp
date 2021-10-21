@@ -1,5 +1,5 @@
 # Adaptive Speech 
-A Mobile App using Flutter to help in communication between especially able (deaf) and others.
+A Mobile Application using Flutter to help in communication between especially able (deaf) and others.
   
 ## About  
 Our goal is to make it easier for individuals who are deaf or have hearing loss to communicate with the people around them: relatives, friends, acquaintances, and strangers, through:
