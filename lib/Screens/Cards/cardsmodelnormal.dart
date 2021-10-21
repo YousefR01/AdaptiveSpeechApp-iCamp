@@ -67,9 +67,10 @@ class CardsModelNormal extends StatelessWidget {
                             },
                             child: Text(
                               data.cardsname[index],
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 35,
-                                  // fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             )),
                       ),

@@ -110,7 +110,7 @@ class mydate {
   var feelingDate = model([
     'HAPPY',
     'ANGRY',
-    'Sad',
+    'SAD',
     'CRY',
     'LIKE ',
     'GOOD',

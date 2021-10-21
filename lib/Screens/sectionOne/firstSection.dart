@@ -19,15 +19,14 @@ class SpeechScreen extends StatefulWidget {
 }
 
 class _SpeechScreenState extends State<SpeechScreen> {
-  GlobalKey _toolTipKey = GlobalKey();
   ScrollController _controller = ScrollController();
   stt.SpeechToText _speech;
   bool _isListening = false;
-  String _text = 'Press the button and start speaking';
+  String _text = 'Press the Listen button and start speaking';
   double _confidence = 1.0;
 
   List<MessageStyle> message = [
-    MessageStyle('Press the button and start speaking', 0)
+    MessageStyle('Press the Listen button and start speaking', 0)
   ];
   String _message = '';
   final _messageController = TextEditingController();
@@ -157,41 +156,35 @@ class _SpeechScreenState extends State<SpeechScreen> {
             duration: const Duration(milliseconds: 2000),
             repeatPauseDuration: const Duration(milliseconds: 100),
             repeat: true,
-            child: GestureDetector(
-              onTap: () {
-                final dynamic _toolTip = _toolTipKey.currentState;
-                _toolTip.ensureTooltipVisible();
-              },
-              child: Tooltip(
-                message: 'press again to stop',
-                child: FloatingActionButton.extended(
-                  heroTag: "listen",
-                  onPressed: () {
-                    _listen();
-                    final snackBar = SnackBar(
-                        backgroundColor: Colors.white,
-                        // const Color.fromRGBO(36, 36, 62, 1),
-                        duration: Duration(seconds: 2),
-                        content: Text(
-                          "Click again to stop",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromRGBO(113, 48, 148, 1),
-                          ),
-                        ));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  },
-                  icon: Icon(
-                    _isListening ? Icons.mic : Icons.mic_none,
-                    size: 25,
-                  ),
-                  label: Text("Listen",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      )),
+            child: Tooltip(
+              message: 'press again to stop',
+              child: FloatingActionButton.extended(
+                heroTag: "listen",
+                onPressed: () {
+                  _listen();
+                  // final snackBar = SnackBar(
+                  //     backgroundColor: Colors.white,
+                  //     // const Color.fromRGBO(36, 36, 62, 1),
+                  //     duration: Duration(seconds: 2),
+                  //     content: Text(
+                  //       "Click again to stop",
+                  //       style: TextStyle(
+                  //         fontSize: 15,
+                  //         fontWeight: FontWeight.bold,
+                  //         color: Color.fromRGBO(113, 48, 148, 1),
+                  //       ),
+                  //     ));
+                  // ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                },
+                icon: Icon(
+                  _isListening ? Icons.mic : Icons.mic_none,
+                  size: 25,
                 ),
+                label: Text(_isListening ? "Stop" : "Listen",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    )),
               ),
             ),
           ),
@@ -254,7 +247,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
 
   void _listen() async {
     if (!_isListening) {
-      print('ana hana');
+      // print('ana hana');
       bool available = await _speech.initialize(
         onStatus: (val) => print('onStatus: $val'),
         onError: (val) => print('onError: $val'),
@@ -276,7 +269,11 @@ class _SpeechScreenState extends State<SpeechScreen> {
     } else {
       setState(() => _isListening = false);
       _speech.stop();
-      add(_text, 0);
+      if (_text != null)
+        add(_text, 0);
+      else
+        _listen();
+      _text = "**We couldn't hear you, try again...**";
     }
   }
 }
