@@ -81,5 +81,5 @@ Here you can see Flip Cards to show the signs and its meanings. You can use it a
 <p align="center">
   <img src="https://user-images.githubusercontent.com/61423797/136614769-be83945b-5e49-4329-aa9d-75ccb0b6f880.png" width="350"/>
   <img src="https://user-images.githubusercontent.com/61423797/136614776-621c5d75-2e77-41b5-90c0-28d7da4f3550.png" width="350"/>
-</p>
+</p> 
 
